@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Css from './Filter.module.css'
 
 export function Filter({ value, onChange }) {
   return (
-    <div className="find">
+    <div className={Css.find}>
       <label>
         <input
-          className="formInput"
           placeholder="Find contact by name"
           value={value}
           onChange={onChange}

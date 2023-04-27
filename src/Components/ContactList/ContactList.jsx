@@ -1,26 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Css from './ContactList.module.css'
 
 export function ContactList({ contacts, removeContact }) {
   return (
-    <div className="contactBlock">
-      <ul className="contactsList">
+    <div>
+      <ul className={Css.contactBlock}>
         {contacts.map(item => {
           return (
             <>
-              <li className="contactsItem" key={item.id}>
-                <div className="contact">
-                  <span>
-                    <span className="contactValue">Name:</span> {item.data.name}
+              <li className={Css.contactList} key={item.id}>
+                <div className={Css.contactValue}>
+                  <span className={Css.contactItem}>
+                   {item.data.name}
                   </span>
-                  <span>
-                    <span className="contactValue">Number:</span>{' '}
+                  <span className={Css.contactItem}>
                     {item.data.number}
                   </span>
+                  </div>
                   <button type="button" onClick={() => removeContact(item.id)}>
                     Delete
                   </button>
-                </div>
+               
               </li>
             </>
           );

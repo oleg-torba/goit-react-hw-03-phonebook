@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Css from '../ContactList/ContactList.module.css'
 
 export class Form extends Component {
   state = {
@@ -28,7 +29,7 @@ export class Form extends Component {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <label>
-          <p>Name</p>
+          <p className={Css.contactItem}>Name</p>
           <input
             className="formInput"
             type="text"
@@ -42,9 +43,8 @@ export class Form extends Component {
         </label>
 
         <label>
-          <p>Number</p>
+          <p className={Css.contactItem}>Number</p>
           <input
-            className="formInput"
             type="tel"
             name="number"
             value={this.state.number}
